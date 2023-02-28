@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% for pet in pets %}
+    <div>
+        <h2><a href="/{{pet.id}}">{{pet.name}}</a></h2>
+        {% if pet.photo_url %}
+            <img src="{{pet.photo_url}}" alt="No pictures of ghosts">
+        {% endif %}
+        {% if pet.available %}
+            <p><b>COME GET HIM!!!</b></p>
+        {% else %}
+            <p>He's already Dead...</p>
+        {% endif %}
+    </div>
+    {% endfor %}
+{% endblock %}
